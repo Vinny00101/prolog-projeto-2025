@@ -50,21 +50,21 @@ O sistema verifica automaticamente se o filme já foi assistido pelo usuário us
 
 Essa é a regra principal do sistema de recomendação. A partir de um filme que o usuário já assistiu **(FilmeBase)** e um    ator preferido **(AtorPreferido)**, ela gera uma lista de recomendações ListaFinal com base na similaridade com outros filmes da base.
 
--Etapas realizadas internamente:
+- Etapas realizadas internamente:
 
--Percorre todos os filmes cadastrados.
+- Percorre todos os filmes cadastrados.
 
--Ignora o próprio FilmeBase.
+- Ignora o próprio FilmeBase.
 
--Elimina qualquer filme já assistido pelo Usuario.
+- Elimina qualquer filme já assistido pelo Usuario.
 
--Calcula o ScoreFinal de similaridade com a regra **calcular_score/4**.
+- Calcula o ScoreFinal de similaridade com a regra **calcular_score/4**.
 
--Filtra apenas os filmes com score igual 4 e 3.
+- Filtra apenas os filmes com score igual 4 e 3.
 
--Gera explicações para a recomendação com a regra **explicacao_recomendacao/3**.
+- Gera explicações para a recomendação com a regra **explicacao_recomendacao/3**.
 
--Ordena os resultados do maior para o menor score.
+- Ordena os resultados do maior para o menor score.
 
 ## calcular_score/4
 
@@ -72,9 +72,9 @@ Essa regra compara dois filmes **(Filme1 e Filme2)** e atribui uma pontuação d
 
 Para cada critério compatível:
 
--Soma-se o respectivo peso.
+- Soma-se o respectivo peso.
 
--O total determina o ScoreFinal.
+- O total determina o ScoreFinal.
 
 ## explicacao_recomendacao/3
 
@@ -82,12 +82,12 @@ Essa regra analisa por que um filme está sendo recomendado, comparando os atrib
 
 Exemplo de explicações possíveis:
 
--Gênero semelhante.
+- Gênero semelhante.
 
--Nota IMDb igual ou maior.
+- Nota IMDb igual ou maior.
 
--Mesmo país de origem.
+- Mesmo país de origem.
 
--Ator preferido no elenco.
+- Ator preferido no elenco.
 
 Essas informações ajudam o usuário a entender por que aquele filme foi sugerido.
